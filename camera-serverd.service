@@ -1,0 +1,14 @@
+# ファイルは/etc/systemd/systemに置く
+[Unit]
+Description=camera server
+
+[Service]
+# 使用する環境によって合わせる
+WorkingDirectory=/home/car/camera-server/
+ExecStart=/bin/bash camera-server.sh
+Restart=always
+Type=simple
+
+[Install]
+WantedBy = multi-user.target
+
